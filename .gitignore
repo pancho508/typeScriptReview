@@ -1,0 +1,35 @@
+# Ignore node_modules in all subfolders
+**/node_modules/
+
+# Ignore build artifacts (common folders)
+**/dist/
+**/build/
+
+# Ignore package lock files in sub-repos
+**/package-lock.json
+**/yarn.lock
+
+# Ignore log files
+**/*.log
+
+# Ignore temporary files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# Ignore .env files
+**/.env
+
+# Ignore other common libraries or folders
+**/vendor/      # PHP dependencies, if applicable
+**/.next/       # Next.js build output
+**/.nuxt/       # Nuxt.js build output
+**/.expo/       # Expo-related folders
+
+# Ignore IDE files (common for all folders)
+**/.vscode/
+**/.idea/
+
+# Ignore git files in sub-repositories
+**/.git/

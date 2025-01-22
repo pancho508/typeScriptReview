@@ -1,0 +1,317 @@
+Getting Started
+Intro to TypeScript
+What is TypeScript, and why use it?
+Advantages over plain JavaScript (type safety, maintainability)
+Typical development workflow with TypeScript (compiling to JS, running code)
+Basic Setup & Environment
+Installing TypeScript globally or per project (npm install -g typescript or npm install typescript --save-dev)
+How to initialize a TypeScript project (tsc --init to create tsconfig.json)
+
+TypeScript Basics
+Core Language Features
+Basic types: string, number, boolean, object, any, etc.
+Type inference: letting TypeScript figure out the type
+Type annotations vs. inferred types
+Basic Syntax
+Declaring variables (let, const) and their types
+Function parameters & return types
+Optional and default parameters
+
+Compiler & Configuration Deep Dive
+tsconfig.json Overview
+Structure of the file (compilerOptions, include, exclude)
+Common options: target, module, outDir, rootDir
+Key Compiler Options
+strict mode and related checks (noImplicitAny, strictNullChecks)
+noUnusedLocals, noUnusedParameters
+Source maps generation (sourceMap: true)
+Build Processes
+Single file transpilation vs. project-wide builds
+Watching files (tsc --watch)
+
+Working with Next-gen JS Code
+Modern JS (ES6+) in TypeScript
+Arrow functions, template literals, destructuring
+Spread/rest operators and how TypeScript supports them
+Transpilation
+Targeting different JS versions (ES5, ES6, ESNext, etc.)
+Polyfills for newer features if needed
+
+Classes & Interfaces
+Classes
+Class-based approach in TypeScript (constructors, fields, methods)
+Public, private, and protected access modifiers
+Inheritance with extends
+Interfaces
+Defining a shape of an object
+Implementing interfaces in classes
+Optional vs. required properties
+
+Advanced Types & TypeScript Features
+Advanced Type Concepts
+Union types: number | string
+Intersection types: combining multiple types
+Type aliases: creating custom type names with type
+Type Narrowing & Guards
+Using typeof or instanceof checks
+Discriminated unions (common property to narrow the type)
+Utility & Mapped Types
+Built-in utility types like Partial<T>, Pick<T>, Omit<T>
+Creating transformations of existing types
+
+Generics
+Functions & Classes with Generics
+Why generics? Reusability and flexibility for different data types
+Syntax for generic functions: function identity<T>(arg: T): T
+Generic Constraints
+Restricting what types can be passed in (extends keyword)
+Ensuring type safety in more complex scenarios
+
+Decorators
+Decorator Basics
+Understanding metadata and reflection in TypeScript
+Experimental nature of decorators (enable in tsconfig.json)
+Applying Decorators
+Class decorators for logging, annotation, etc.
+Method, accessor, property, and parameter decorators
+Use Cases
+Logging, validation, dependency injection patterns
+
+Time to Practice – Full Project
+Hands-On Integration
+Combine basics, advanced types, classes, interfaces, and decorators
+Practice with generics, ensuring type safety
+Real-world example: building a small application or library
+
+Working with Namespaces & Modules
+Namespaces
+Grouping related code to prevent global namespace pollution
+The namespace keyword and how to reference external parts
+Modules (ES Modules & CommonJS)
+import and export syntax
+Differences between ES modules vs. older module systems
+How to structure a project using modules
+
+Webpack & TypeScript
+Project Setup
+Installing and configuring Webpack
+Using ts-loader or a similar loader
+Bundling for Production
+Setting up production config (minification, code splitting)
+Generating source maps for debugging
+Working with Modules
+Properly importing dependencies
+Tree-shaking unused code
+
+Third-Party Libraries & TypeScript
+Using Type Definitions
+Installing @types packages (npm install @types/library)
+Ambient declarations when types aren’t available
+Avoiding Type Conflicts
+Understanding version mismatch issues
+Maintaining type definitions for custom libraries
+
+React + TypeScript & NodeJS + TypeScript
+React + TypeScript
+Creating a React app with TypeScript templates
+Defining props and state with interfaces
+Handling events and form inputs
+NodeJS + TypeScript
+Setting up TypeScript in a Node project
+Writing type-safe Express endpoints
+Dealing with type definitions for Node.js modules
+
+Tips & Suggestions
+Stay Consistent
+Use a linting tool (e.g., ESLint) configured for TypeScript
+Adopt consistent coding standards (naming conventions, folder structures)
+Use Strict Mode
+Early detection of type-related errors
+Better maintainability in larger projects
+Keep Experimenting
+Apply new features in small examples before putting them in production code
+Build multiple small side projects to solidify your understanding
+
+
+!!! KEEP in Mind !!! ------------>
+
+- TypeScript types are checked at compile time, not runtime. JS types are checked at runtime.
+- Union types are used to combine multiple types into one. ex: number | string
+- Type Aliases / Custom Types are used to create custom names for existing types. ex: type Combinable = number | string
+- Void return type is used when a function does not return anything
+
+
+
+*** COMPILE ***
+- tsc --init  => creates a tsconfig.json file
+- exclude will automatically exclude all files in the node_modules folder
+- include will include all files you put in the array
+- lib is not defined it defaults to the browser
+
+- private modifier is used to restrict access to the class members and methods from outside the class
+- public modifier is used to allow access from outside of the class it self 
+
+
+Section 1: Getting Started
+What TypeScript is: A superset of JavaScript adding static typing.
+Benefits of TypeScript: Error catching during development, better IDE support, and scalable code.
+Setting up TypeScript: Install using npm install -g typescript.
+First TypeScript file: Write a simple script and compile it using tsc.
+TypeScript Playground: Explore and experiment with TypeScript code online.
+
+Section 2: TypeScript Basics & Basic Types
+Primitive types: string, number, boolean, null, and undefined.
+Type annotations: Specify variable types explicitly (let age: number = 30).
+Type inference: Understand when TypeScript infers types automatically.
+Array and Tuple types: Arrays (string[]) and fixed-length tuples ([string, number]).
+Union types: Use | to allow multiple types (number | string).
+Type aliases: Create reusable type definitions (type ID = string | number).
+Enums: Define named constants (enum Role { ADMIN, USER }).
+
+Section 3: The TypeScript Compiler (and its Configuration)
+Compiling TypeScript: Use the tsc command to generate JavaScript.
+Configuration file (tsconfig.json):
+Key options: target, module, strict, outDir, rootDir.
+Enable strict type-checking modes.
+Watch mode: Automatically recompile with tsc --watch.
+Exclude/Include files: Specify files to include/exclude in the project.
+Module resolution: How TypeScript resolves imports.
+
+Section 4: Next-generation JavaScript & TypeScript
+ES6+ features in TypeScript:
+let and const declarations.
+Arrow functions.
+Template literals.
+Default, rest, and spread operators.
+Destructuring arrays and objects.
+TypeScript-specific enhancements: Optional chaining (?.) and nullish coalescing (??).
+
+Section 5: Classes & Interfaces
+Classes: Learn syntax, constructors, and instance creation.
+Access modifiers: public, private, protected, readonly.
+Inheritance: Using extends to create subclasses.
+Static members: Methods/properties tied to the class, not instances.
+Abstract classes: Define structure for subclasses.
+Interfaces: Define contracts for objects and classes.
+Interface inheritance: Use extends to combine multiple interfaces.
+Interfaces as function types: Define structure for functions.
+Optional and readonly properties: Mark properties as optional (?) or immutable (readonly).
+
+Section 6: Advanced Types
+Intersection types: Combine multiple types (type Admin = User & Role).
+Type guards: Narrow down types at runtime (e.g., typeof, instanceof).
+Type casting: Use as or <type> to override inferred types.
+Index signatures: Allow dynamic property keys ({ [key: string]: number }).
+Mapped types: Create new types based on existing ones (Partial<T>, Readonly<T>).
+Discriminated unions: Simplify working with multiple object types with a common property.
+Conditional types: Use extends for logic in types (T extends U ? X : Y).
+Function Overloads: Define multiple function signatures for a single function.  
+
+Section 7: Generics
+What generics are: Create reusable components with type placeholders (<T>).
+Generic functions: Write flexible, type-safe functions.
+Generic constraints: Restrict types with extends.
+Generic classes and interfaces: Apply generics to objects and structures.
+Default generic types: Specify defaults for generic type parameters.
+
+Section 8: Decorators
+What decorators are: Special functions used for meta-programming.
+Class decorators: Modify or augment classes.
+Property decorators: Work with class properties.
+Method decorators: Extend or modify class methods.
+Parameter decorators: Use for constructor/method parameters.
+Practical uses: Logging, validations, or adding metadata.
+
+Section 9: Practice Time! Let's Build a Drag & Drop Project
+Project setup: Use TypeScript to build a small project.
+Implement drag-and-drop functionality: Leverage browser APIs.
+Type-safe DOM manipulation: Use TypeScript for querying DOM elements.
+Encapsulation: Use classes to manage project logic.
+
+Section 10: Modules & Namespaces
+Modules: Use import and export to organize code into files.
+Namespace basics: Group related code into namespaces.
+Module resolution: Learn how TypeScript resolves paths.
+Practical organization: Split large projects into maintainable modules.
+
+Section 11: Using Webpack with TypeScript
+Setting up Webpack: Configure Webpack to bundle TypeScript files.
+Loaders: Use ts-loader for compiling TypeScript.
+Source maps: Enable for debugging.
+Tree-shaking: Remove unused code for optimized builds.
+1) Add a devServer option
+devServer: {
+  static: [
+    {
+      directory: path.join(__dirname),
+    },
+  ],
+},
+2) Set output.publicPath to '/dist/'
+output: {
+  filename: 'bundle.js',
+  path: path.resolve(__dirname, 'dist'),
+  publicPath: '/dist/'
+},
+(we add publicPath in the next lecture - make sure you set it to '/dist/', NOT to just 'dist'!)
+After the next lecture, the finished, updated webpack.config.js file should look like this:
+const path = require('path');
+module.exports = {
+  mode: 'development',
+  entry: './src/app.ts',
+  devServer: {
+    static: [
+      {
+        directory: path.join(__dirname),
+      },
+    ],
+  },
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/dist/',
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['.ts', '.js'],
+  },
+};
+
+
+Section 12: 3rd Party Libraries & TypeScript
+Type definitions: Use @types packages for type safety in libraries.
+Installing types: Use npm install --save-dev @types/library.
+Using any: When to use any for libraries without types (but avoid it if possible).
+Interoperability: Use TypeScript with popular libraries like Lodash or Axios.
+
+Section 13: Time to Practice! Let's Build a "Select & Share a Place" App
+Google Maps API: Integrate APIs into TypeScript projects.
+Event listeners: Type-safe handling of browser events.
+Encapsulation: Use classes to manage app components.
+Dynamic rendering: Use TypeScript to manipulate the DOM.
+
+Section 14: React.js & TypeScript
+TypeScript in React: Typing props, state, and event handlers.
+Functional components: Use React.FC or PropsWithChildren.
+Hooks: Type safety with useState, useEffect, and custom hooks.
+Type inference in JSX: Avoid unnecessary annotations.
+React with Context API: Use TypeScript to type contexts.
+
+Section 15: Node.js + Express & TypeScript
+Setting up a TypeScript project in Node.js: Use tsc and ts-node.
+Express with TypeScript: Define route handlers and middleware.
+Request/response types: Use Request, Response, and NextFunction types.
+Error handling: Type-safe error-handling middleware.
+Working with databases: Type integration with ORMs like TypeORM or Prisma.
+
+Section 16: Course Roundup
+Summary of key concepts: Revisit all topics covered in the course.
+Next steps: Suggestions for practicing TypeScript further (projects, documentation).
